@@ -1,23 +1,19 @@
 
-// modules =================================================
+
+// 'node Modules
 var express        = require('express');
-var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var crypto = require('crypto');
 var mongoose = require('mongoose');
+
+var app = express();
+
+// 'custom config
 var utility = require('./config/utilities.js');
 
-
-//var utility = require('./server/config/utilities.js');
-// configuration ===========================================
-
-// config files
-var db = require('./config/db');
-//
-//
-//require('./server/config/express')(app, config, mongoose,winston);
 require('./config/mongoose')(mongoose);
-//require('./server/config/passport')(mongoose, permissionEnum);
+
 
 
 // set our port
@@ -25,7 +21,7 @@ var port = process.env.PORT || 8080;
 
 // connect to our mongoDB database
 // (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url);
+// mongoose.connect('');
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
