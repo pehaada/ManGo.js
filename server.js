@@ -4,11 +4,21 @@ var express        = require('express');
 var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var mongoose = require('mongoose');
+var utility = require('./config/utilities.js');
 
+
+//var utility = require('./server/config/utilities.js');
 // configuration ===========================================
 
 // config files
 var db = require('./config/db');
+//
+//
+//require('./server/config/express')(app, config, mongoose,winston);
+require('./config/mongoose')(mongoose);
+//require('./server/config/passport')(mongoose, permissionEnum);
+
 
 // set our port
 var port = process.env.PORT || 8080;
